@@ -81,6 +81,10 @@ class Animal:
     def sleep(self):
         return f"{self.name} está durmiendo"
 
+    def make_sound(self):
+        return f"{self.name} hace un ruido!!"
+    
+
 class Dog(Animal): ##herencia Dog hereda de Animal 
     def __init__(self, name, breed):
         super().__init__(name) ## clase hijo llama al constructor de la clase padre
@@ -92,10 +96,32 @@ class Dog(Animal): ##herencia Dog hereda de Animal
     def describe(self):
         return f"{self.name} es de la raza {self.breed}"
 
+    def make_sound(self):
+        return f"{self.name} dice: Wooof Wooof!!"
 
-my_dog = Dog("Snoopy")
-my_dog2 = Dog(name = "Lassy")
+class Cat(Animal):
+    def make_sound(self):
+        return  f"{self.name} dice: Miiiiaaaaauuuuuu!!!!"
+
+
+my_dog = Dog("Snoopy", "Beagle")
+my_dog2 = Dog(name = "Lassy", breed= "Golden Retriever")
 
 print(my_dog.eat())
 print(my_dog.sleep())
 print(my_dog.bark())
+
+print(my_dog.describe())
+print(my_dog.is_pet)
+
+
+
+generic = Animal(name = "Algo")
+dog = Dog(name="Snoopy", breed= "Beagle")
+cat = Cat("Garfield")
+
+print(generic.make_sound())
+print(dog.make_sound())
+print(cat.make_sound())
+
+

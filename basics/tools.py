@@ -124,3 +124,11 @@ plt.tight_layout()
 
 plt.savefig("weather_chart.png")
 plt.show()
+
+import os
+
+if not os.path.exists('data'):
+    os.makedirs('data')
+
+df.to_csv('data/palma_weather.csv', index=False)
+print('Los datos se han guardado correctamente en la carpeta data!')
